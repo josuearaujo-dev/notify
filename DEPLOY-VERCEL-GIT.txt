@@ -1,0 +1,21 @@
+PASSO A PASSO - GIT MANUAL + VERCEL
+===================================
+
+1) Entre na pasta gerada:
+   cd deploy-vercel-git
+
+2) Revise os arquivos:
+   ls -la
+
+3) Suba manualmente para o seu repositório Git (web ou cliente Git).
+   Importante: os arquivos .env NÃO vão juntos.
+
+4) No painel da Vercel:
+   - Conecte o repositório
+   - Configure as variáveis de ambiente
+   - Deploy
+
+Se preferir Vercel CLI:
+   npm i -g vercel
+   vercel
+   vercel --prod

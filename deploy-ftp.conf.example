@@ -1,0 +1,56 @@
+# Configuração de Deploy FTP/SFTP
+# Copie este arquivo para deploy-ftp.conf e preencha com suas credenciais
+# NUNCA commite o arquivo deploy-ftp.conf no git!
+
+# ============================================
+# CONFIGURAÇÕES FTP/SFTP (OBRIGATÓRIAS)
+# ============================================
+
+# Tipo de conexão: "ftp" ou "sftp"
+FTP_TYPE="sftp"
+
+# Host do servidor FTP
+FTP_HOST="seu-servidor.com"
+
+# Porta (padrão: 21 para FTP, 22 para SFTP)
+FTP_PORT="22"
+
+# Usuário FTP
+FTP_USER="seu-usuario"
+
+# Senha FTP
+FTP_PASS="sua-senha"
+
+# Diretório remoto onde os arquivos serão enviados
+# Exemplo: /home/usuario/public_html ou /var/www/html
+FTP_REMOTE_DIR="/home/usuario/public_html"
+
+# ============================================
+# CONFIGURAÇÕES SSH (OPCIONAIS)
+# ============================================
+# Use estas configurações se quiser executar comandos no servidor após o upload
+# Por exemplo: instalar dependências, fazer build, reiniciar aplicação
+
+# Host SSH (geralmente o mesmo do FTP)
+SSH_HOST="seu-servidor.com"
+
+# Usuário SSH
+SSH_USER="seu-usuario"
+
+# Porta SSH (padrão: 22)
+SSH_PORT="22"
+
+# Caminho para chave SSH privada (opcional, se usar autenticação por chave)
+# SSH_KEY="/path/to/your/private/key"
+
+# Comandos a executar no servidor após o upload
+# Separe múltiplos comandos com ponto e vírgula (;)
+# Exemplo: "cd /home/usuario/public_html && pnpm install && pnpm build && pm2 restart whatsapp-api"
+SSH_COMMANDS="cd /home/usuario/public_html && pnpm install && pnpm build && pm2 restart whatsapp-api"
+
+# ============================================
+# OPÇÕES ADICIONAIS
+# ============================================
+
+# Limpar diretório temporário após deploy (true/false)
+CLEANUP_AFTER_DEPLOY="true"
