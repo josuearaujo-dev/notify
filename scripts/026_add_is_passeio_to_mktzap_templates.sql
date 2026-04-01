@@ -1,0 +1,2 @@
+ALTER TABLE mktzap_templates
+  ADD COLUMN IF NOT EXISTS is_passeio BOOLEAN NOT NULL DEFAULT false;
